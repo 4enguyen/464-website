@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cats vs Dogs - WhiskerWeb</title>
+    <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+    <link rel="stylesheet" type="text/css" href="Styling/catsVsDogs.css">
+  </head>
+  <body>
+    <h1 id="title">WhiskerWeb</h1>
+
+    <nav class="navigationBar">
+      <a href="home.html">Home</a>
+      <a href="facts.html">Facts</a>
+      <img id="logo" src="Images/logo.png" alt="logo">
+      <a href="game.html">Game</a>
+      <div class="dropdown">
+        <a>More</a>
+        <div class="dropdown-content">
+          <a href="blog.html">Blog</a>
+          <a href="catsVsDogs.html">Cats vs Dogs</a>
+          <a href="">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <p>Here is a comparison of cats and dogs.</p>
+      <table border="2px" class="catsVsDogs">
+        <tr>
+          <th>Category</th>
+          <th>Cats</th>
+          <th>Dogs</th>
+        </tr>
+        <tr>
+          <td>Friendliness</td>
+          <td>Not as friendly as dogs</td>
+          <td>Very friendly</td>
+        </tr>
+        <tr>
+          <td>Independence</td>
+          <td>Very independent</td>
+          <td>Not as independent</td>
+        </tr>
+        <tr>
+          <td>Trainability</td>
+          <td>Not as trainable</td>
+          <td>Very trainable</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <form>
+        <p>Which do you prefer?</p>
+        <input type="radio" id="cats" name="catsVsDogs" value="cats"/>
+        <label for="cats">Cats</label><br>
+        
+        <input type="radio" id="dogs" name="catsVsDogs" value="dogs"/>
+        <label for="dogs">Dogs</label><br>
+
+        <input type="radio" id="neither" name="catsVsDogs" value="neither"/>
+        <label for="neither">Neither</label><br>
+        
+        <input type="submit" value="Submit" style="margin-top: 5px">
+      </form>
+    </div>
+
+    <div class="backButton" style="margin-top: 50px;">
+      <a href="home.html">Back to Home</a>
+    </div>
+  </body>

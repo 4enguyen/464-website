@@ -1,0 +1,16 @@
+.factImg {
+    width: 150px;
+    height:125px;
+    margin-right: 10px
+}
+
+@media screen and (max-width: 900px) {
+    .factImg {
+        width: 30%;
+        height: 50%;
+    }
+
+    div#textBlock {
+        display: block;
+    }
+}

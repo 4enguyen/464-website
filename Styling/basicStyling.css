@@ -1,0 +1,171 @@
+html {
+    background-color: #fffded;
+    color: #4e342e;
+}
+
+h1 {
+    color: #4e342e; 
+    text-align: center;
+    margin: 0;
+    font-size: 250%;
+}
+
+#title {
+    margin-bottom: 5px;
+}
+
+.navigationBar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+  
+  .navigationBar a {
+    font-size: 200%;
+    color: #4f1f00;
+    padding: 20px 50px;
+    background-color: #fffded;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .navigationBar a:hover {
+    background-color: #e67e22;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+#logo {
+    width: 100px;
+}
+
+.backButton a{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e67e22;
+    border: 1px solid #4f1f00;
+    text-decoration: none;
+    color: #4e342e;
+    text-decoration: none;
+    float: right;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.backButton a:hover {
+    background-color: #e69a58;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.imgSize {
+    max-width: 50%;
+    height: auto;
+    border: 10px solid #4f1f00;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #4f1f00;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    align-self: center;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.noMarginTop {
+    margin-top: 0px;
+}
+
+.noMarginBottom {
+    margin-bottom: 0px;
+}
+
+.noMarginVert {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+    clear: both;
+}
+
+.flex {
+    display: flex;
+}
+
+.marginLeftSmall {
+    margin-left: 10px;
+}
+
+.marginRightSmall {
+    margin-right: 10px;
+}
+
+.marginTopSmall {
+    margin-top: 10px;
+}
+
+.marginBottomSmall {
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+    .navigationBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigationBar a {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 40%;
+    }
+
+    .imgSize {
+        max-width: 90%;
+    }
+
+    #logo {
+        order: -1;
+        margin-bottom: 5px;
+    }
+
+}

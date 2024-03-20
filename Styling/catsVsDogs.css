@@ -1,0 +1,13 @@
+table.catsVsDogs {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 50%;
+  th, td {
+      border: 1px solid #000000;
+      padding: 8px;
+      text-align: center;
+  }
+  th {
+      background-color: #f2c078;
+  }
+}

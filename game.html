@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Game - WhiskerWeb</title>
+    <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+    <link rel="stylesheet" type="text/css" href="Styling/game.css">
+  </head>
+  <body>
+    <h1 id="title">WhiskerWeb</h1>
+    
+    <nav class="navigationBar">
+      <a href="home.html">Home</a>
+      <a href="facts.html">Facts</a>
+      <img id="logo" src="Images/logo.png" alt="logo">
+      <a href="game.html">Game</a>
+      <div class="dropdown">
+        <a>More</a>
+        <div class="dropdown-content">
+          <a href="blog.html">Blog</a>
+          <a href="catsVsDogs.html">Cats vs Dogs</a>
+          <a href="">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="game">
+      <div id="message" style="display: none;"></div>
+      <img id="catImage" class="imgSize" src="" alt="A cat">
+      <div id="options"></div>
+      <button id="next">Next</button>
+    </div>
+
+    <div class="backButton" style="margin-top: 50px;">
+      <a href="home.html">Back to Home</a>
+    </div>
+    <script src="Scripts/game.js"></script>
+</html>

@@ -1,0 +1,92 @@
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#catImage {
+  height: auto;
+  border-radius: 10px;
+  display: flex;
+}
+
+#options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+#options button {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f2c078;
+  color: black;
+  border: #4f1f00 1px solid;
+}
+
+#options button:hover {
+  background-color: #f2d8c2;
+}
+
+.option-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#options button:disabled {
+  cursor: default;
+  background-color: red;
+}
+
+
+#next {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: #4f1f00 1px solid;
+  border-radius: 5px;
+  background-color: #e67e22;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next:hover {
+  background-color: #e69a58;
+}
+
+#message {
+  position: absolute;
+  font-size: 30px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.imgSize {
+  max-height: 400px;
+}
+
+@media screen and (max-width: 650px) {
+  #message {
+    top: 50%
+  }
+
+  #options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+}
