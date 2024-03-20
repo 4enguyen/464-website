@@ -37,6 +37,7 @@ function newGame() {
     option.addEventListener('click', () => {
       if (breed === currentBreed) {
         showMessage('Correct!', true);
+        option.style.background = 'lime';
       } else {
         showMessage('Try Again!', false);
         option.disabled = true;
