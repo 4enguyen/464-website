@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register - WhiskerWeb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+  </head>
+  <body>
+    <h1 id="title">WhiskerWeb</h1>
+    <a href="account.html" class="accountButton">Account</a>
+
+    <nav class="navigationBar">
+      <a href="home.html">Home</a>
+      <a href="facts.html">Facts</a>
+      <img id="logo" src="Images/logo.png" alt="logo">
+      <a href="game.html">Game</a>
+      <div class="dropdown">
+        <a>More</a>
+        <div class="dropdown-content">
+          <a href="care.html">Care/Health Tips</a>
+          <a href="blog.html">Blog</a>
+          <a href="catsVsDogs.html">Cats vs Dogs</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row" id="accountForm">
+      <div class="column" style="text-align: center; border-right: 4px solid #4e342e; padding-bottom: 25px;">
+        <h2 class="noMarginBottom">Login</h2>
+        <h3>Already have an account? Login here.</h3>
+        <form id="loginForm" action="login.php" method="post">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </form>
+      </div>
+      <div class="column" style="text-align: center;">
+        <h2 class="noMarginBottom">Register</h2>
+        <h3>Create an account.</h3>
+        <form action="register.php" method="post">
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Register">
+        </form>
+      </div>
+    </div>
+
+    <div id="logout" style="display: none; text-align: center;">
+      <h3 id="greeting"></h3>
+      <button id="logoutButton">Logout</button>
+    </div>
+    
+    <script>
+      window.onload = function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'check_session.php', true);
+        xhr.onload = function() {
+          if (this.status == 200) {
+            if (this.responseText !== 'Not logged in') {
+              document.getElementById('accountForm').style.display = 'none';
+              document.getElementById('logout').style.display = 'block';
+              document.getElementById('greeting').textContent = this.responseText;
+            }
+          }
+        };
+        xhr.send();
+
+        var url = new URL(window.location.href);
+        var message = url.searchParams.get("message");
+        if (message) {
+          var messageElement = document.createElement('p');
+          messageElement.textContent = message;
+          document.body.appendChild(messageElement);  
+          document.body.style.textAlign = "center";
+        }
+      };
+
+      document.getElementById('logoutButton').addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'logout.php', true);
+        xhr.onload = function() {
+          if (this.status == 200) {
+            document.getElementById('logout').style.display = 'none';
+            document.getElementById('accountForm').style.display = 'block';
+          }
+        };
+        xhr.send();
+      });
+    </script>
+  </body>
+</html>
