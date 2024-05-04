@@ -1,0 +1,6 @@
+#canvasContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh; /* This makes the container take up the full height of the viewport */
+}

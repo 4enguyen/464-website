@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>About - WhiskerWeb</title>
+    <title>Game - WhiskerWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+    <link rel="stylesheet" type="text/css" href="Styling/canvas.css">
+    <style>
+      canvas {
+          border: 1px solid black;
+      }
+    </style>
+
   </head>
   <body>
     <h1 id="title">WhiskerWeb</h1>
     <a href="account.html" class="accountButton">Account</a>
-
+    
     <nav class="navigationBar">
       <a href="home.html">Home</a>
       <a href="facts.html">Facts</a>
@@ -34,23 +41,14 @@
     </nav>
 
     <div id="welcome">
-      <p class="marginTopSmall">About</p>
-    </div>
-    
-    <div style="text-align: center; font-size: larger;">
-      <div>
-        <i>Hi there, my name is Elvin Nguyen and welcome to my website, WhiskerWeb, where you can find all things cats.</i>
-      </div>
-      <div>
-        <i>My brother has two cats at home so that is the inspiration of this website. I hope you like it :).</i>
-      </div>
-      <div>
-        INSERT PICTURE OF CATS
-      </div>
-    </div>
-    <div class="backButton" style="margin-top: 50px;">
-      <a href="home.html">Back to Home</a>
+      <p class="marginTopSmall">Maze</p>
     </div>
 
-  </body>
+    <body>
+      <div id="canvasContainer">
+        <canvas id="mazeCanvas" width="400" height="400"></canvas>
+      </div>
+      <script src="Scripts/maze.js"></script>
+    </body>
+
 </html>

@@ -11,7 +11,11 @@ const breeds = {
   'Siamese': 5,
   'Sphynx': 5
 };
-
+let currentScore = 0;
+const currentScoreDisplay = document.getElementById('currentScore');
+let highScore = 0;
+const highScoreDisplay = document.getElementById('highScore');
+let isLoggedIn = false;
 
 function newGame() {
   let breedKeys = Object.keys(breeds);
@@ -38,12 +42,34 @@ function newGame() {
       if (breed === currentBreed) {
         showMessage('Correct!', true);
         option.style.background = 'lime';
+        currentScore++;
+        currentScoreDisplay.textContent = 'Score:' + currentScore;
       } else {
         showMessage('Try Again!', false);
         option.disabled = true;
+        endGame();
+        currentScore = 0;
+        currentScoreDisplay.textContent = 'Score:' + currentScore;
       }
     });
     options.appendChild(option);
+  }
+}
+
+function endGame() {
+  if (isLoggedIn) {
+    fetch('update_score.php', {
+      method: 'POST',
+      body: JSON.stringify({ score: currentScore}),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.text())
+    .then(newHighScore => {
+      if (newHighScore > highScore) {
+        highScore = newHighScore;
+        highScoreDisplay.textContent = 'High Score: ' + highScore;
+      }
+    });
   }
 }
 
@@ -60,5 +86,20 @@ function showMessage(text, isCorrect) {
   }, 1000);
 
 }
+
+window.onload = function() {
+  fetch('update_score.php')
+    .then(response => response.text())
+    .then(responseHighScore => {
+      if (responseHighScore === 'Not logged in') {
+        isLoggedIn = false;
+      } else {
+        isLoggedIn = true;
+        highScore = responseHighScore;
+        highScoreDisplay.textContent = 'High Score: ' + highScore;
+      }
+    });
+};
+
 nextButton.addEventListener('click', newGame);
 newGame();
