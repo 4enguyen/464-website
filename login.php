@@ -1,11 +1,6 @@
 <?php
 session_start();
-$dbLocation = "localhost";
-$dbUsername = "root";
-$dbPassword = "root";
-$dbName = "whiskerweb";
-$conn = mysqli_connect($dbLocation, $dbUsername, $dbPassword, $dbName);
-
+$conn = new mysqli('localhost', 'root', 'root', 'whiskerweb');
 
 if (mysqli_connect_error()) {
   die("Connection failed: " . mysqli_connect_error());

@@ -2,7 +2,6 @@
 session_start();
 
 if(isset($_SESSION['email'])) {
-    // Database connection
     $db = new mysqli('localhost', 'root', 'root', 'whiskerweb');
 
     if ($db->connect_error) {
@@ -31,10 +30,8 @@ if(isset($_SESSION['email'])) {
         $high_score = $score;
     }
 
-    // Close the database connection
     $db->close();
 
-    // Return the high score
     echo $high_score;
 } else {
     echo "Not logged in";

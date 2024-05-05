@@ -77,6 +77,19 @@
   max-height: 400px;
 }
 
+#scores {
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f2c078;
+  color: black;
+  border: #4f1f00 1px solid;
+  font-size: 20px;
+}
+
 @media screen and (max-width: 650px) {
   #message {
     top: 55%
@@ -87,6 +100,20 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+  }
+
+  #scores {
+    position: relative;
+    left: 0%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  #scores p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
 }

@@ -23,7 +23,7 @@ h1 {
 .navigationBar a {
     font-size: 200%;
     color: #4f1f00;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background-color: #fffded;
     text-decoration: none;
     display: flex;
@@ -42,9 +42,20 @@ h1 {
     top: 0;
     right: 0;
     text-decoration: none;
-    font-size: 100%;
+    font-size: 120%;
     margin-right: 10px;
     margin-top: 10px;
+    background-color: #e67e22;
+    border-radius: 5px;
+    padding: 10px;
+    color: #4e342e;
+
+}
+
+.accountButton:hover {
+    background-color: #e69a58;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #logo {
@@ -76,11 +87,24 @@ div#welcome {
 }
 
 .imgSize {
-    max-width: 50%;
+    max-width: 25%;
     height: auto;
     border: 10px solid #4f1f00;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #4f1f00;
+}
+
+section .imgSize {
+    max-width: 50%;
+}
+
+#content .imgSize:hover {
+    filter: brightness(80%);
+
+}
+
+.blogPost .imgSize {
+    max-width: 90%;
 }
 
 .dropdown {
@@ -168,6 +192,9 @@ div#welcome {
     font-weight: bold;
 }
 
+section {
+    text-align: center;
+}
 
 @media screen and (max-width: 650px) {
     .navigationBar {
@@ -190,12 +217,19 @@ div#welcome {
     }
 
     .imgSize {
-        max-width: 90%;
+        display: block;
+        max-width: 30%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #logo {
         order: -1;
         margin-bottom: 5px;
+    }
+
+    #greeting {
+        font-size: 100%;
     }
 
 }

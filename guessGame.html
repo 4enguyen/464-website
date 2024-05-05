@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home - WhiskerWeb</title>
+    <title>Guess the Breed - WhiskerWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+    <link rel="stylesheet" type="text/css" href="Styling/game.css">
   </head>
   <body>
     <h1 id="title">WhiskerWeb</h1>
@@ -36,35 +37,24 @@
     </nav>
 
     <div id="welcome">
-      <p class="noMarginVert">Welcome to WhiskerWeb!</p>
+      <p class="marginTopSmall">Guess the Breed</p>
     </div>
-    
-    <section>
-      <p class="noMarginTop">We're all about cats! Discover fascinating facts, play fun games, read our blog, and more.</p>
-      <img src="Images/cat1.jpg" alt="A picture of a cat." class="imgSize">
-    </section>
 
-    <section id="content">
-      <h1 class="marginTopSmall">Featured Content</h1>
-      <div>
-        <h2 class="marginBottomSmall">Check out our latest blog post!</h2>
-        <a href="blog.html">
-          <img class="imgSize" src="Images/treecat.jpg" alt="cat in tree">
-        </a>
-      </div>
+    <div id="game">
+      <div id="message" style="display: none;"></div>
+      <img id="catImage" class="imgSize" src="" alt="A cat">
+      <div id="options"></div>
+      <button id="next">Next</button>
+    </div>
 
-      <div>
-        <h2 class="marginBottomSmall">Can you guess the breed?</h2>
-        <a href="guessGame.html">
-          <img class="imgSize" src="Images/Breeds/Siamese/1.jpg" alt="siamese cat">
-        </a>
-      </div>
-    </section>
+    <div id="scores">
+      <p id="currentScore">Streak: 0</p>
+      <p id="highScore">High Score: 0</p>
+    </div>
 
-    <section id="content">
-      <h2 class="marginBottomSmall">Get Started</h2>
-      <p><a href="account.html" style="text-decoration: none; font-size: 120%;">Create an Account</a></p>
-    </section>
-
+    <div class="backButton" style="margin-top: 50px;">
+      <a href="home.html">Back to Home</a>
+    </div>
+    <script src="Scripts/guessGame.js"></script>
   </body>
 </html>

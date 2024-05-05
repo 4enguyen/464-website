@@ -101,5 +101,10 @@ window.onload = function() {
     });
 };
 
-nextButton.addEventListener('click', newGame);
+nextButton.addEventListener('click', () => {
+  currentScore = 0;
+  currentScoreDisplay.textContent = 'Score: ' + currentScore;
+  newGame();
+});
+
 newGame();

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Game - WhiskerWeb</title>
+    <title>Maze - WhiskerWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
     <link rel="stylesheet" type="text/css" href="Styling/canvas.css">
@@ -15,7 +15,7 @@
   <body>
     <h1 id="title">WhiskerWeb</h1>
     <a href="account.html" class="accountButton">Account</a>
-    
+
     <nav class="navigationBar">
       <a href="home.html">Home</a>
       <a href="facts.html">Facts</a>
@@ -23,7 +23,7 @@
       <div class="dropdown">
         <a>Games</a>
         <div class="dropdown-content">
-          <a href="game.html">Guess the Breed</a>
+          <a href="guessGame.html">Guess the Breed</a>
           <a href="maze.html">Maze</a>
           <a href="trivia.html">Trivia</a>
         </div>
@@ -35,7 +35,9 @@
           <a href="care.html">Care/Health Tips</a>
           <a href="blog.html">Blog</a>
           <a href="catsVsDogs.html">Cats vs Dogs</a>
+          <a href="adopt.html">Adoption Info</a>
           <a href="about.html">About</a>
+
         </div>
       </div>
     </nav>
@@ -44,11 +46,13 @@
       <p class="marginTopSmall">Maze</p>
     </div>
 
-    <body>
-      <div id="canvasContainer">
-        <canvas id="mazeCanvas" width="400" height="400"></canvas>
-      </div>
-      <script src="Scripts/maze.js"></script>
-    </body>
+    <div id="canvasContainer">
+      <canvas id="mazeCanvas" width="400" height="400"></canvas>
+    </div>
 
+    <div class="backButton" style="margin-top: 50px;">
+      <a href="home.html">Back to Home</a>
+    </div>
+    <script src="Scripts/maze.js"></script>
+  </body>
 </html>
