@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
     <link rel="stylesheet" type="text/css" href="Styling/blog.css">
+    <link rel="stylesheet" type="text/css" href="Styling/account.css">
+
   </head>
   <body>
     <h1 id="title">WhiskerWeb</h1>
@@ -22,7 +24,6 @@
           <a href="trivia.html">Trivia</a>
         </div>
       </div>
-
       <div class="dropdown">
         <a>More</a>
         <div class="dropdown-content">
@@ -31,7 +32,6 @@
           <a href="catsVsDogs.html">Cats vs Dogs</a>
           <a href="adopt.html">Adoption Info</a>
           <a href="about.html">About</a>
-
         </div>
       </div>
     </nav>
@@ -51,24 +51,7 @@
           As the cat, encouraged by the children's cheers, took a leap of faith, it was caught safely amidst applause. 
           This heartwarming tale is more than a rescue story; it's a celebration of community, bravery, and the remarkable outcomes when we unite for a common cause.
         </p>
-        <div class="blogInfo noMarginBottom">
-          <div>
-            Author: John Doe
-          </div>
-          <div>
-            Comments: 23453
-          </div>
-          <div class="flex">
-            <div class="marginRightSmall">Add Comment to Blog:</div>
-            <input type="text" id="comment1" class="marginRightSmall" placeholder="Enter your comment here..."/>
-            <input type="submit" id="submit1" value="Submit"/>
-          </div>
-        </div>
-        <div class="commentsSection" id="commentsSection1">
-          <p class="bold">Your Comments: </p>
-        </div>
       </div>
-  
       <div class="blogPost flex">
         <h3 class="blogTitle">Stray Cat Joins Marathon: Its Final Sprint is Absolutely Unforgettable. 2/01/2024</h3>
         <img class="imgSize" src="Images/catrun.jpeg" alt="cat running">
@@ -80,16 +63,33 @@
           Crossing the finish line amid cheers and applause, this furry athlete became an instant sensation, embodying the spirit of perseverance and the sheer unpredictability of life's adventures. 
           This remarkable tale not only highlights the unexpected moments that bring us joy but also serves as a reminder of the enduring bond between humans and animals, even in the most unlikely of circumstances.
         </p>
+      </div>
+    </div>
+    
+    <div class="row" id="accountForm">
+      <div class="column" style="padding-right: 5px;">
         <div class="blogInfo noMarginBottom">
           <div>
-            Author: Dwayne Johnson
-          </div>
-          <div>
-            Comments: 32374
+            <p>Author: John Doe</p>
+            <p>Comments: 23453</p>
           </div>
           <div class="flex">
-            <div class="marginRightSmall">Add Comment to Blog:</div>
-            <input type="text" id="comment2" class="marginRightSmall" placeholder="Enter your comment here..."/>
+            <input type="text" id="comment1" placeholder="Enter your comment here..." style="width: 100%; margin-right: 10px; padding: 5px 10px;"/>
+            <input type="submit" id="submit1" value="Submit" style="width: 30%;"/>
+          </div>
+        </div>
+        <div class="commentsSection" id="commentsSection1">
+          <p class="bold">Your Comments: </p>
+        </div>
+      </div>
+      <div class="column" style="padding-left: 5px;">
+        <div class="blogInfo noMarginBottom">
+          <div>
+            <p>Author: Joe Johnson</p>
+            <p>Comments: 32374</p>
+          </div>
+          <div class="flex">
+            <input type="text" id="comment2" placeholder="Enter your comment here..." style="width: 500%; margin-right: 10px; padding: 5px 10px;"/>
             <input type="submit" id="submit2" value="Submit"/>
           </div>
         </div>
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-
+    
     <div class="backButton" style="margin-top: 50px;">
       <a href="home.html">Back to Home</a>
     </div>

@@ -42,13 +42,14 @@ function drawCat() {
   ctx.drawImage(catImg, cat.x - cat.size / 2, cat.y - cat.size / 2, cat.size, cat.size);
 }
 
+// Creates maze
 function drawMaze() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "#4e342e";
   ctx.fillRect(0, 0, 400, 400);
 
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "#fffded";
   ctx.fillRect(40, 40, 320, 320);
 
   ctx.fillStyle = "black";
@@ -59,14 +60,14 @@ function drawMaze() {
   const squareSize = 10;
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
-      ctx.fillStyle = (i + j) % 2 === 0 ? "grey" : "white";
+      ctx.fillStyle = (i + j) % 2 === 0 ? "grey" : "black";
       ctx.fillRect(40 + i * squareSize, 40 + j * squareSize, squareSize, squareSize); // Start
       ctx.fillRect(360 - 40 + i * squareSize, 360 - 40 + j * squareSize, squareSize, squareSize); // End
     }
   }
 }
 
-
+// Movement function
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -107,6 +108,7 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
+// Checks collision
 function isColliding(x, y, size) {
   // Check if the movement is outside the maze boundaries
   if (x - size / 2 < mazeBounds.minX || x + size / 2 > mazeBounds.maxX ||
@@ -121,12 +123,12 @@ function isColliding(x, y, size) {
 }
 
 
-document.addEventListener('keydown', function(e) {
-    lastKey = e.key;
+document.addEventListener('keydown', function(keyPressed) {
+    lastKey = keyPressed.key;
 });
 
-document.addEventListener('keyup', function(e) {
-    if (e.key === lastKey) lastKey = '';
+document.addEventListener('keyup', function(keyPressed) {
+    if (keyPressed.key === lastKey) lastKey = '';
 });
 
 requestAnimationFrame(gameLoop);

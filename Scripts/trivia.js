@@ -1,5 +1,6 @@
 const options = document.getElementById('options');
 const questionDisplay = document.getElementById('questionDisplay');
+let score = 0;
 let questions = [
   {
     question: "What is the scientific name for the domestic cat?",
@@ -32,14 +33,14 @@ let questions = [
     correctAnswer: "All of the above"
   }
 ];
-let score = 0;
 let questionsCopy = [...questions];
 
+// Generate new question and options
 function newGame() {
   const options = document.getElementById('options');
   const questionDisplay = document.getElementById('questionDisplay');
 
-  // Check if there are no more questions
+  // Checks if there are no more questions
   if (questions.length === 0) {
     questionDisplay.textContent = `Game over! Your final score is ${score}.`;
     options.innerHTML = '';

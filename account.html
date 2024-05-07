@@ -4,6 +4,7 @@
     <title>Account - WhiskerWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styling/basicStyling.css">
+    <link rel="stylesheet" type="text/css" href="Styling/account.css">
   </head>
   <body>
     <h1 id="title">WhiskerWeb</h1>
@@ -21,7 +22,6 @@
           <a href="trivia.html">Trivia</a>
         </div>
       </div>
-
       <div class="dropdown">
         <a>More</a>
         <div class="dropdown-content">
@@ -30,7 +30,6 @@
           <a href="catsVsDogs.html">Cats vs Dogs</a>
           <a href="adopt.html">Adoption Info</a>
           <a href="about.html">About</a>
-
         </div>
       </div>
     </nav>
@@ -40,7 +39,7 @@
     </div>
 
     <div class="row" id="accountForm">
-      <div class="column" style="text-align: center; border-right: 4px solid #4e342e; padding-bottom: 25px;">
+      <div class="column" style="text-align: center;">
         <h2 class="noMarginBottom">Login</h2>
         <h3>Already have an account? Login here.</h3>
         <form id="loginForm" action="login.php" method="post">
@@ -49,7 +48,7 @@
           <input type="submit" value="Login">
         </form>
       </div>
-      <div class="column" style="text-align: center;">
+      <div class="column" style="text-align: center;  border-left: 4px solid #4e342e; padding-bottom: 25px;">
         <h2 class="noMarginBottom">Register</h2>
         <h3>Create an account.</h3>
         <form action="register.php" method="post">
@@ -64,10 +63,11 @@
 
     <div id="logout" style="display: none; text-align: center;">
       <h3 id="greeting"></h3>
-      <button id="logoutButton">Logout</button>
+      <button id="logoutButton" style="width: 10%;">Logout</button>
     </div>
     
     <script>
+      // Check if user is logged in
       window.onload = function() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'check_session.php', true);
@@ -92,6 +92,7 @@
         }
       };
 
+      // Logout button functionality
       document.getElementById('logoutButton').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'logout.php', true);

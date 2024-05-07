@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+window.onload =  function() {
   fetch('get_comments.php')
   .then(response => response.json())
   .then(data => {
@@ -20,8 +20,7 @@ window.addEventListener('load', function() {
       commentsSectionBlogTwo.appendChild(newComment);
     });
   });
-});
-
+};
 
 const submitBlogOne = document.getElementById('submit1');
 submitBlogOne.addEventListener('click', commentsForBlogOne);

@@ -1,6 +1,8 @@
 const catImage = document.getElementById('catImage');
 const options = document.getElementById('options');
 const nextButton = document.getElementById('next');
+const currentStreakDisplay = document.getElementById('currentScore');
+const highScoreDisplay = document.getElementById('highScore');
 const breeds = {
   'Bengal': 5,
   'Birman': 5,
@@ -11,12 +13,13 @@ const breeds = {
   'Siamese': 5,
   'Sphynx': 5
 };
-let currentScore = 0;
-const currentScoreDisplay = document.getElementById('currentScore');
+let currentStreak = 0;
 let highScore = 0;
-const highScoreDisplay = document.getElementById('highScore');
+let tempHighScore = 0;
 let isLoggedIn = false;
 
+
+// Generates new question and options
 function newGame() {
   let breedKeys = Object.keys(breeds);
   currentBreed = breedKeys[Math.floor(Math.random() * breedKeys.length)];
@@ -42,25 +45,26 @@ function newGame() {
       if (breed === currentBreed) {
         showMessage('Correct!', true);
         option.style.background = 'lime';
-        currentScore++;
-        currentScoreDisplay.textContent = 'Score:' + currentScore;
+        currentStreak++;
+        currentStreakDisplay.textContent = 'Streak: ' + currentStreak;
       } else {
         showMessage('Try Again!', false);
         option.disabled = true;
         endGame();
-        currentScore = 0;
-        currentScoreDisplay.textContent = 'Score:' + currentScore;
+        currentStreak = 0;
+        currentStreakDisplay.textContent = 'Streak: ' + currentStreak;
       }
     });
     options.appendChild(option);
   }
 }
 
+// Displays next question and checks high score
 function endGame() {
   if (isLoggedIn) {
     fetch('update_score.php', {
       method: 'POST',
-      body: JSON.stringify({ score: currentScore}),
+      body: JSON.stringify({ score: currentStreak}),
       headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.text())
@@ -70,9 +74,16 @@ function endGame() {
         highScoreDisplay.textContent = 'High Score: ' + highScore;
       }
     });
+  } else {
+    if (currentStreak > tempHighScore) {
+      tempHighScore = currentStreak;
+      highScoreDisplay.textContent = 'High Score: ' + tempHighScore;
+    }
+  
   }
 }
 
+// Displays correct or incorrect answer
 function showMessage(text, isCorrect) {
   message.textContent = text;
   message.style.display = 'block';
@@ -87,6 +98,7 @@ function showMessage(text, isCorrect) {
 
 }
 
+// Checks if user is logged in on load
 window.onload = function() {
   fetch('update_score.php')
     .then(response => response.text())
@@ -102,8 +114,8 @@ window.onload = function() {
 };
 
 nextButton.addEventListener('click', () => {
-  currentScore = 0;
-  currentScoreDisplay.textContent = 'Score: ' + currentScore;
+  currentStreak = 0;
+  currentStreakDisplay.textContent = 'Score: ' + currentStreak;
   newGame();
 });
 

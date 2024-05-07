@@ -38,6 +38,16 @@
   flex-direction: column;
 }
 
+.blogInfo > div > p {
+  margin: 0;
+  padding: 0;
+}
+
+.blogInfo .flex input {
+  margin: 0;
+  padding: 5px 10px;
+}
+
 @media screen and (max-width: 650px) {
   .blogGrid {
     display: block;
